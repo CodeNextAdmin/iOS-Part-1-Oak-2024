@@ -355,6 +355,38 @@ func printTimesTables(for number: Int, end: Int = 12) {
 }
 
 
+print("\n💡 Topic 4B 💡\nInternal External Perameters\n")
+
+// Here is a smple function that takes two numbers and multiplies them together. We can do this by passing the two numbers we want to add using parameters
+
+func multiply(numOne: Int, numTwo: Int) {
+    print(numOne * numTwo)
+}
+
+multiply(numOne: 4, numTwo: 6) // 24
+
+// This method is perfectly fine, but sometimes it's nice to have our code read like English as much as possible. How can we do that?
+
+// in Swift, a parameter can also have two names for the same parameter
+//   - external parameter: the name of the parameter used outside of the function
+//   - internal parameter: the name of teh parameter used inside the function
+
+// Example
+// func myFunction(externalParemeterName internalParameterName: String) {
+//     print(internalParameterName)
+// }
+// 
+// myFunction(externalParemeterName: "Hello")
+
+// Now let's use this to make our multiply method read more like English
+
+func multiply(_ numOne: Int, by numTwo: Int) {
+    print(numOne * numTwo)
+}
+
+multiply(4, by: 6) // 24
+
+
 
 print("\n-------------------------------------------------------------------------------------------")
 
