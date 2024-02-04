@@ -535,6 +535,60 @@ func registerToVote(isCitizan: Bool, isAtLast18: Bool, isRegistered: Bool) {
 */
 
 
+print("💡 Topic 6B 💡\nThrowing functions \n")
+
+// Swift supports error handlign when a function is not able to finish successfully and we need to report an error. They way we can do that is making a function that can throw
+
+// Example:
+// func function(condition: Bool) throws {
+//    guard condition else {
+//        throw Error
+//    }
+//    ... do something
+// }
+
+// the key word "throw" indicates that a function can throw an error. Must go after the parenthasis and before the return type
+// the key word "throw" is how you actually throw an error.
+// It's usually best to create your own error enum
+
+
+enum PasswordError: Error {
+    case tooShort
+    case tooObvious
+}
+
+func checkPassword(password: String) throws -> String {
+    guard password.count > 5 else {
+        print("your password was too short")
+        throw PasswordError.tooShort
+    }
+    guard password != "123456", password != "password" else {
+        print("Your password was too obvious")
+        throw PasswordError.tooObvious
+    }
+    
+    print("good password")
+    return "good password"
+}
+
+// When you want to use a function that throws, you have to ype "try?" before the function
+try? checkPassword(password: "123")
+try? checkPassword(password: "123456")
+try? checkPassword(password: "password")
+try? checkPassword(password: "Koi93nd0&3ndeil&dn+-8K")
+
+print("\n🧠 Challenge 6B: 🧠")
+print("Copy your code from Challenge 6A and past it below 👇. Update it to throw the different errors \n")
+
+// Use this Error enum in your code
+enum RegisterToVoteError: Error {
+    case notCitizen, under18, notRegistered
+}
+
+/*
+ 👇 Your new code below 👇
+*/
+
 
 enum CustomError: Error {
     case invalidInput
