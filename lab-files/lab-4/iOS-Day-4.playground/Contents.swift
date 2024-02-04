@@ -469,6 +469,73 @@ print("\n-----------------------------------------------------------------------
 
 print("💡 Topic 6 💡\nError Handling")
 
+// As we begin to write more complicated code, there can begin to be sections where an error can happen. We want to make sure we handle any potential errors.
+
+
+print("💡 Topic 6A 💡\nGuard statements")
+
+// A guard statement is kinda like an inverse if statement, where if takes a condition and makes sure it's true before continuing, else we execute the guard block
+// Think of it like a body guard that doesn't let the code go through if a condition is not met
+
+/*
+ Example:
+ guard someCondition else {
+     return // execute this else block ONLY if our condition is false. ALWAYS return from inside this block
+ }
+
+ if condition true, continue here
+*/
+
+print("Let's look at an example of how to let a user see their social media feed or make them log in using if-else VS guard")
+
+func openInstagram(isLoggedIn: Bool) {
+    if isLoggedIn {
+        print("show home feed page")
+    } else {
+        print("show login page")
+    }
+}
+
+func openSnapchat(isLoggedIn: Bool) {
+    guard isLoggedIn else {
+        print("show login page")
+        return
+    }
+    print("show home feed")
+}
+
+openInstagram(isLoggedIn: true)
+openInstagram(isLoggedIn: false)
+
+openSnapchat(isLoggedIn: true)
+openSnapchat(isLoggedIn: false)
+
+print("\n🧠 Challenge 6A: 🧠")
+print("Below is a function that handles some errors using if-else. Rewrite this function to use guard instead. 👇\n")
+
+
+func registerToVote(isCitizan: Bool, isAtLast18: Bool, isRegistered: Bool) {
+    if isCitizan {
+        if isAtLast18 {
+            if isRegistered {
+                print("please select who you would like to vote for")
+            } else {
+                print("this person does not have ID, cannot vote")
+            }
+        } else {
+            print("this person is too young, cannot vote")
+        }
+    } else {
+        print("this person is not a citizan, cannot vote")
+    }
+}
+
+/*
+ 👇 Your new code below 👇
+*/
+
+
+
 enum CustomError: Error {
     case invalidInput
     case outOfRange
