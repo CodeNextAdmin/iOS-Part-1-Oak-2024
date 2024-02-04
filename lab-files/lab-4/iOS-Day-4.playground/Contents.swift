@@ -571,7 +571,7 @@ func checkPassword(password: String) throws -> String {
     return "good password"
 }
 
-// When you want to use a function that throws, you have to ype "try?" before the function
+// When you want to use a function that throws, you have to use "try?" before the function
 try? checkPassword(password: "123")
 try? checkPassword(password: "123456")
 try? checkPassword(password: "password")
@@ -590,59 +590,35 @@ enum RegisterToVoteError: Error {
 */
 
 
-enum CustomError: Error {
-    case invalidInput
-    case outOfRange
-}
+print("💡 Topic 6C 💡\n handling errors with do-try-catch \n")
 
-func divideNumbers(_ dividend: Int, by divisor: Int) throws -> Int {
-    guard divisor != 0 else {
-        throw CustomError.invalidInput
-    }
-    
-    if dividend < 0 || divisor < 0 {
-        throw CustomError.outOfRange
-    }
-    
-    return dividend / divisor
-}
+// Above we learned how to make a funciton throwable, and how to call a throwign function using "try?" However, we aren't really doing anything with the errors when they happen. When a funciton throws an error, we can handle that using a do-try-catch block
+
+print("\nWe are using do-try-catch by trying to execute the checkPassword() function, and catching any errors if they happen \n")
+
+ do {
+     try checkPassword(password: "")
+     print("checkPassword did not throw error")
+ } catch {
+     print("checkPassword did throw error")
+ }
+
+print("\nhaving a simple catch like this is a catch-all, so ANY error will fall into the catch block. Maybe we want to be even more specifici with errors, we can add more unique catch blocks \n")
 
 do {
-    let result = try divideNumbers(10, by: 2)
-    print("Result: \(result)")
-} catch CustomError.invalidInput {
-    print("Invalid input: Division by zero.")
-} catch CustomError.outOfRange {
-    print("Out of range: Numbers must be positive.")
+    try checkPassword(password: "123456")
+    print("checkPassword did not throw error")
+} catch PasswordError.tooShort {
+    print("checkPassword did throw error - too short")
+} catch PasswordError.tooObvious {
+    print("checkPassword did throw error - too obvious")
 } catch {
-    print("Unknown error occurred.")
+    print("checkPassword did throw error - unknown") // it's usually good to include a catch-all error just in case you missed one
 }
-
-/*
- In this example, we define a custom CustomError enum to represent two specific error cases: invalidInput when dividing by zero and outOfRange when either the dividend or divisor is negative. The divideNumbers function takes two integers and performs division, but it throws an error if the divisor is zero or if either number is negative.
-
- The do-catch block is used to handle potential errors that may be thrown by the divideNumbers function. If an error occurs, the appropriate catch block is executed, providing meaningful feedback to the user about the specific error that occurred.
- */
-
-
-print("\n🧠 Challenge 6: 🧠")
-print("Write a function called calculateSquareRoot that takes a positive number as input and returns its square root. If the input is negative, the function should throw a custom error NegativeNumberError. 👇\n")
-
-/*
- Example
  
- do {
-     let result = try calculateSquareRoot(16)
-     print("Square root: \(result)")
- } catch NegativeNumberError {
-     print("Error: Input must be a positive number.")
- } catch {
-     print("Unknown error occurred.")
- }
  
- You need to implement the calculateSquareRoot function to calculate the square root of the given positive number. If the input is negative, the function should throw the NegativeNumberError custom error. The do-catch block should handle this error and print an appropriate error message.
- */
-
+print("\n🧠 Challenge 6C: 🧠")
+print("Copy your code from Challenge 6B and past it below 👇. How handle any errors using do-try-catch \n")
 
 /*
  👇 Your new code below 👇
