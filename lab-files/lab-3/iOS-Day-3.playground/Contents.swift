@@ -443,6 +443,11 @@ print("\n💡 Topic 4B 💡\nFor Loops")
 // when you find yourself copying and pasting the same code over and over again: use a loop
 // as an example, this is how you would do the previous example with a for loop
 
+// For loop syntax: 
+// for value in iterable {
+//     // do something with value
+// }
+
 // loop:
 for _ in 1...5 {
     print("Hello")
@@ -496,6 +501,12 @@ print("INSTRUCTION 👇\n")
 print("\n💡 Topic 4C 💡\nWhile Loops")
 
 // while loops are loops that run while a given condition is true
+
+// While loop syntax:
+// while condition {
+//    // do something
+// }
+
 var num = 5
 
 while num >= 1 {
