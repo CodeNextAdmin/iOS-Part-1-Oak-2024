@@ -450,9 +450,9 @@ default:
 print("\n🧠 Challenge 3B: 🧠")
 print("INSTRUCTION 👇\n")
 
-// make a switch statement that checks for the type of an item in a cart. If the item is a shirt, the statement prints a category of clothing, if it is a phone, print electronics, if it is a fridge, print appliances, and use the default case to check for invalid items.
+// make a switch statement that prints the category for each item in a cart. If the item is a shirt, the statement prints a category of clothing, if it is a phone, print electronics, if it is a fridge, print appliances, and use the default case to check for invalid items.
     
-let item = "shirt"
+let cart = ["shirt", "shorts", "phone", "garden hose", "microwave", "fridge"]
 
 /*
  👇 Your new code below 👇
