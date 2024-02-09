@@ -401,6 +401,16 @@ if fruit == Fruit.apple {
 }
 // -- much less consise and much less readable
 
+// Switch syntax:
+// switch variable {
+//    case valueToCompare:
+//      print("variable matched valueToCompare")
+//    case anotheValue:
+//      print("variable matched anotherValue")
+//    case default:
+//      print("variable did not match any value")
+// }
+
 print("\n🧠 Challenge 3A: 🧠")
 print("INSTRUCTION 👇\n")
 // write a switch statement that prints out the weather with this given forcast enum
