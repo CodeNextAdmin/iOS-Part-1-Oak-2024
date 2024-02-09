@@ -487,6 +487,7 @@ print("\n🧠 Challenge 3C: 🧠")
 print("INSTRUCTION 👇\n")
 
 // try to break your code with this enum (dont cover every case and see what happens)
+// Experiment to see if you can use default with enums?
 enum Height {
     case short, medium, tall
 }
@@ -494,6 +495,7 @@ enum Height {
 /*
  👇 Your new code below 👇
 */
+
 
 
 //-------------------------------------------------------------------------------------------
@@ -541,7 +543,10 @@ let month = "June"
  👇 Your new code below 👇
 */
 
-
+// fallthrough is mostly unique to Swift
+// most other languages use break between case statements and the absence of break is a fallthrough
+// Leads to bugs because it is hard to tell if engineer forgot or was intentional
+// Some languages are adding support now to make intention clear.
 
 print("\n-------------------------------------------------------------------------------------------")
 
