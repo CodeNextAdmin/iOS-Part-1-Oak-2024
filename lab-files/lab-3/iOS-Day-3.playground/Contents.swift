@@ -554,7 +554,7 @@ print("\n💡 Topic 4 💡\nTernary Operator \n")
 
 //-------------------------------------------------------------------------------------------
 
-print("💡 Topic 4A 💡\nTernaary vs if-else: Code Length")
+print("💡 Topic 4A 💡\nTernary vs if-else: Code Length")
 
 // the ternary operator is made for quick checks and returns versus an if else statement
 // the syntax is CONDITION ? A : B
@@ -595,6 +595,21 @@ print("\n💡 Topic 4B 💡\nShorthanding conditions with Ternaries")
 
 print("\n🧠 Challenge 4B: 🧠")
 print("INSTRUCTION 👇\n")
+
+let bestScore = 5000
+let currentScore = 4999
+
+var newBestScore = 0
+if (currentScore > bestScore) {
+    newBestScore = currentScore
+} else {
+    newBestScore = bestScore
+}
+
+print("Your best score is \(newBestScore)")
+
+// Use a ternary operator to simplify the above code into as few lines as possible.
+// 🎉🎉 Extra props 🎉🎉 for making it a one line
 
 /*
  👇 Your new code below 👇
