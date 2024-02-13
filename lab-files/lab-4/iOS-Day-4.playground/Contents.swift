@@ -2,11 +2,267 @@ import UIKit
 
 /*
  
-Day 4 - Functions
+Day 4 - Conditionals, Enums and Functions
  
 */
 
-print("💡 Topic 1 💡\nReusing Code with Functions\n")
+print("\n💡 Topic 1 💡\nSwitch Statements \n")
+
+//-------------------------------------------------------------------------------------------
+
+print("💡 Topic 1A 💡\nSwitch vs if-else: Handling Multiple Cases")
+
+// A switch statement allows you to compare a value against possible matching patterns and have different code run based off of which pattern matches
+// This has a few advantages over if-else statements:
+// Firstly, it is significantly more readable; seeing a switch statement immediately tells someone reading your code what it is doing.
+// Secondly, it is more consice over if-else statements: no need for == or repeating variables.
+// Thirdly, a switch statement is usually faster than if-else statements.
+
+enum Fruit {
+    case apple, banana, orange
+}
+
+var fruit = Fruit.apple
+
+// switch statement
+switch fruit{
+case .apple:
+    print("It's an apple!")
+case .banana:
+    print("It's a banana!")
+case .orange:
+    print("It's an orange!")
+}
+
+// if-else statement
+if fruit == Fruit.apple {
+    print("It's an apple!")
+} else if fruit == Fruit.banana {
+    print("It's a banana!")
+} else if fruit == Fruit.orange {
+    print("It's an orange!")
+}
+// -- much less consise and much less readable
+
+// Switch syntax:
+// switch variable {
+//    case valueToCompare:
+//      print("variable matched valueToCompare")
+//    case anotheValue:
+//      print("variable matched anotherValue")
+//    case default:
+//      print("variable did not match any value")
+// }
+
+print("\n🧠 Challenge 1A: 🧠")
+print("INSTRUCTION 👇\n")
+// write a switch statement that prints out the weather with this given forcast enum
+
+enum Forcast{
+    case sun, rain, wind, cloud
+}
+
+let forcast = Forcast.wind
+
+/*
+ 👇 Your new code below 👇
+*/
+
+
+
+//-------------------------------------------------------------------------------------------
+
+print("\n💡 Topic 1B 💡\nDefault Cases")
+
+// default cases are like the final else statement in if-else statements
+
+var fruitString = "grape"
+
+switch fruitString {
+case "apple ":
+    print("It's an apple!")
+case "banana":
+    print("It's a banana!")
+case "orange":
+    print("It's an orange!")
+default:
+    print("Mystery...")
+}
+
+
+print("\n🧠 Challenge 1B: 🧠")
+print("INSTRUCTION 👇\n")
+
+// make a switch statement that prints the category for each item in a cart. If the item is a shirt, the statement prints a category of clothing, if it is a phone, print electronics, if it is a fridge, print appliances, and use the default case to check for invalid items.
+    
+let cart = ["shirt", "shorts", "phone", "garden hose", "microwave", "fridge"]
+
+/*
+ 👇 Your new code below 👇
+*/
+
+
+//-------------------------------------------------------------------------------------------
+
+print("\n💡 Topic 1C 💡\nSwitch Statement Rules")
+
+// rules:
+// all switch statements must be exhaustive
+// switch statements will only execute the first condition that matches what you are checking
+    
+let city = "New York City"
+
+
+// this code will break with error "Switch must be exhaustive"
+//switch city{
+//case "New York City":
+//    print("That is in New York")
+//case "Los Angeles":
+//    print("That is in California")
+//case "Albuquerque":
+//    print("That is in New Mexico")
+// you need a default case to be exhaustive with strings
+//}
+   
+// with Enums you only have to cover every case of the enum
+    
+print("\n🧠 Challenge 1C: 🧠")
+print("INSTRUCTION 👇\n")
+
+// try to break your code with this enum (dont cover every case and see what happens)
+// Experiment to see if you can use default with enums?
+enum Height {
+    case short, medium, tall
+}
+
+/*
+ 👇 Your new code below 👇
+*/
+
+
+
+//-------------------------------------------------------------------------------------------
+
+print("\n💡 Topic 1D 💡\nFallthrough Behavior")
+
+// the fallthrough keyword will make the switch statement run the next case (without checking the condition), chaining them will continue the fallthrough
+// you can also fallthrough into the default case
+
+let number = 5
+
+print("this number is")
+
+switch number{
+case 6:
+    print("bigger than 5")
+    fallthrough
+case 5:
+    print("bigger than 4")
+    fallthrough
+case 4:
+    print("bigger than 3")
+    fallthrough
+case 3:
+    print("bigger than 2")
+    fallthrough
+case 2:
+    print("bigger than 1")
+    fallthrough
+case 1:
+    print("bigger than 0")
+default:
+    print("too big")
+}
+
+print("\n🧠 Challenge 1D: 🧠")
+print("INSTRUCTION 👇\n")
+
+// print all the months up to and before a given month but only up to june. Make sure to use the default case for all other months and invalid cases
+// * dont fallthorugh into the default case
+
+let month = "June"
+
+/*
+ 👇 Your new code below 👇
+*/
+
+// fallthrough is mostly unique to Swift
+// most other languages use break between case statements and the absence of break is a fallthrough
+// Leads to bugs because it is hard to tell if engineer forgot or was intentional
+// Some languages are adding support now to make intention clear.
+
+print("\n-------------------------------------------------------------------------------------------")
+
+print("\n💡 Topic 2 💡\nTernary Operator \n")
+
+//-------------------------------------------------------------------------------------------
+
+print("💡 Topic 2A 💡\nTernary vs if-else: Code Length")
+
+// the ternary operator is made for quick checks and returns versus an if else statement
+// the syntax is CONDITION ? A : B
+// if CONDITION is true, this statement becomes A
+// if CONDITION is false, the statement becomes B
+// this is really useful for inline statements where it would become very annoying to use an if statement, like in this example
+
+let isMorning = false
+
+print("good \(isMorning ? "morning!" : "evening!")")
+// prints good evening!
+
+// if statement
+if isMorning {
+    print("good morning!")
+} else {
+    print("good evening!")
+}
+
+// this is much longer because we have to make two different parts with two different print statements which could be much simpler
+
+print("\n🧠 Challenge 2A: 🧠")
+print("INSTRUCTION 👇\n")
+
+let age = 50
+// use the ternary operator to print whether someone is an adult or not (18 or older = adult)
+
+
+/*
+ 👇 Your new code below 👇
+*/
+
+
+
+//------------------------------------------------------------------------------------------- *** come back here ***
+
+print("\n💡 Topic 2B 💡\nShorthanding conditions with Ternaries")
+
+print("\n🧠 Challenge 4B: 🧠")
+print("INSTRUCTION 👇\n")
+
+let bestScore = 5000
+let currentScore = 4999
+
+var newBestScore = 0
+if (currentScore > bestScore) {
+    newBestScore = currentScore
+} else {
+    newBestScore = bestScore
+}
+
+print("Your best score is \(newBestScore)")
+
+// Use a ternary operator to simplify the above code into as few lines as possible.
+// 🎉🎉 Extra props 🎉🎉 for making it a one line
+
+/*
+ 👇 Your new code below 👇
+*/
+    
+
+print("\n-------------------------------------------------------------------------------------------")
+
+
+print("💡 Topic 3 💡\nReusing Code with Functions\n")
 
 // This set of greetings seems short at just 3 lines. But what if we wanted to use them multiple times?
 
@@ -16,7 +272,7 @@ print("From: Jeremy, Tom, Deyby & Teddy")
 
 //-------------------------------------------------------------------------------------------
 
-print("\n💡 Topic 1A 💡\nDefining Functions\n")
+print("\n💡 Topic 3A 💡\nDefining Functions\n")
 
 func greet() {
     print("Hello Engineer")
@@ -30,7 +286,7 @@ greet() // Greets 2nd engineer
 greet() // Greets 3rd engineer
 
 
-print("\n🧠 Challenge 1A: 🧠")
+print("\n🧠 Challenge 3A: 🧠")
 print("Create a Farewell Function and Call It 3x👇\n")
 
 /*
@@ -41,7 +297,7 @@ print("Create a Farewell Function and Call It 3x👇\n")
 
 print("\n-------------------------------------------------------------------------------------------")
 
-print("\n💡 Topic 2 💡\nReturn Statements \n")
+print("\n💡 Topic 4 💡\nReturn Statements \n")
 
 // Here we’re calling the sorted method inside of the print function.
 let letters: Array<Character> = ["Z", "L", "A", "P", "K"]
@@ -58,7 +314,7 @@ func addFourAndFive() -> Int {
 print(addFourAndFive()) // Prints out 9
 
 
-print("\n🧠 Challenge 2: 🧠")
+print("\n🧠 Challenge 4: 🧠")
 print("Create a Subtraction Function for the Numbers 7 and 2 👇\n")
 
 
@@ -70,7 +326,7 @@ print("Create a Subtraction Function for the Numbers 7 and 2 👇\n")
 
 //-------------------------------------------------------------------------------------------
 
-print("\n💡 Topic 2A 💡\nReturn Multiple Values \n")
+print("\n💡 Topic 4A 💡\nReturn Multiple Values \n")
 
 // We can return multiple values from this function such as the min and the max
 func calculateStatistics(scores: [Int]) -> (min: Int, max: Int, average: Double) {
@@ -100,7 +356,7 @@ print("Maximum score: \(result.max)")
 print("Average score: \(result.average)")
 
 
-print("\n🧠 Challenge 2A: 🧠")
+print("\n🧠 Challenge 4A: 🧠")
 print("Write a function called analyzeNumbers that takes an array of integers as input and returns a tuple containing the count of even numbers and the count of odd numbers in the array. 👇\n")
 
 // Example:
@@ -118,7 +374,7 @@ print("Write a function called analyzeNumbers that takes an array of integers as
 
 print("\n-------------------------------------------------------------------------------------------")
 
-print("\n💡 Topic 3 💡\nParameters \n")
+print("\n💡 Topic 5 💡\nParameters \n")
 
 // Here, we define 2 parameters, a and b, and define their data type
 // For the purpose of an add function, a and b should each be an Int
@@ -132,7 +388,7 @@ print(sum) // Prints 27 + 1, or 28
 
 //-------------------------------------------------------------------------------------------
 
-print("\n💡 Topic 3A 💡\nDefault Values\n")
+print("\n💡 Topic 5A 💡\nDefault Values\n")
 
 func printTimesTables(for number: Int, end: Int = 12) {
     for i in 1...end {
@@ -144,7 +400,7 @@ printTimesTables(for: 5, end: 20)
 printTimesTables(for: 8)
 
 
-print("\n🧠 Challenge 3A: 🧠")
+print("\n🧠 Challenge 5A: 🧠")
 print("Write a function called greetUser that takes a name as input and prints a personalized greeting message. If no name is provided, the function should print a generic greeting message. 👇\n")
 
 // Example
@@ -160,7 +416,7 @@ print("Write a function called greetUser that takes a name as input and prints a
 
 print("\n-------------------------------------------------------------------------------------------")
 
-print("💡 Topic 4 💡\nError Handling")
+print("💡 Topic 6 💡\nError Handling")
 
 enum CustomError: Error {
     case invalidInput
@@ -197,7 +453,7 @@ do {
  */
 
 
-print("\n🧠 Challenge 4: 🧠")
+print("\n🧠 Challenge 6: 🧠")
 print("Write a function called calculateSquareRoot that takes a positive number as input and returns its square root. If the input is negative, the function should throw a custom error NegativeNumberError. 👇\n")
 
 /*
