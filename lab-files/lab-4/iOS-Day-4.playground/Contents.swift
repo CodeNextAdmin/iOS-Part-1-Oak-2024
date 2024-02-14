@@ -268,7 +268,7 @@ print("💡 Topic 3 💡\nReusing Code with Functions\n")
 
 print("Hello Engineer")
 print("Welcome to iOS Club")
-print("From: Jeremy, Tom, Deyby & Teddy")
+print("From: Henry, Olivia, Alberto, Vidur")
 
 //-------------------------------------------------------------------------------------------
 
@@ -277,7 +277,7 @@ print("\n💡 Topic 3A 💡\nDefining Functions\n")
 func greet() {
     print("Hello Engineer")
     print("Welcome to iOS Club")
-    print("From: Jeremy, Tom, Deyby & Teddy")
+    print("From: Henry, Olivia, Alberto, Vidur")
 }
 
 // Calls the greet function
@@ -297,7 +297,68 @@ print("Create a Farewell Function and Call It 3x👇\n")
 
 print("\n-------------------------------------------------------------------------------------------")
 
-print("\n💡 Topic 4 💡\nReturn Statements \n")
+print("\n💡 Topic 4 💡\nParameters \n")
+
+// Here, we define 2 parameters, a and b, and define their data type
+// For the purpose of an add function, a and b should each be an Int
+
+func printSum(a: Int, b: Int) -> Int {
+    return a + b
+}
+
+printSum(a: 27, b: 1) // Prints 27 + 1, or 28
+
+//-------------------------------------------------------------------------------------------
+
+print("\n💡 Topic 4A 💡\nDefault Values\n")
+
+// What if we wan to have a default value for a parameter.
+func startGame(mode: String = "Easy") { 
+   print(mode);
+   // The code to start the game based on the 'mode'
+}
+
+startGame()        // Our game starts on Easy
+startGame(mode: "Hard")  // But we can switch to Hard! 
+
+print("\n🧠 Challenge 4A: 🧠")
+print("Write a function called greetUser that takes a name as input and prints a personalized greeting message. If no name is provided, the function should print a generic greeting message. 👇\n")
+
+// Example
+// greetUser(name: "Alice") -> Output: "Hello, Alice!"
+// greetUser() -> Output: "Hello, there!"
+
+
+/*
+ 👇 Your new code below 👇
+*/
+
+print("\n🧠 BONUS Challenge 4A: 🧠")
+print("Can you write a Swift function that automatically prints out a times table for any number we give it? 👇\n")
+
+// printTimesTables(for: 5, end: 20)
+// 1 x 5 = 5
+// 2 x 5 = 10
+// 3 x 5 = 15
+// ...
+// 20 x 5 = 100
+// printTimesTables(for: 8)
+// 1 x 8 = 8
+// ...
+// 12 x 8 = 96
+
+// INSTRUCTOR ONLY
+func printTimesTables(for number: Int, end: Int = 12) {
+    for i in 1...end {
+        print("\(i) x \(number) = \(i * number)")
+    }
+}
+
+
+
+print("\n-------------------------------------------------------------------------------------------")
+
+print("\n💡 Topic 5 💡\nReturn Statements \n")
 
 // Here we’re calling the sorted method inside of the print function.
 let letters: Array<Character> = ["Z", "L", "A", "P", "K"]
@@ -314,7 +375,7 @@ func addFourAndFive() -> Int {
 print(addFourAndFive()) // Prints out 9
 
 
-print("\n🧠 Challenge 4: 🧠")
+print("\n🧠 Challenge 5: 🧠")
 print("Create a Subtraction Function for the Numbers 7 and 2 👇\n")
 
 
@@ -326,7 +387,7 @@ print("Create a Subtraction Function for the Numbers 7 and 2 👇\n")
 
 //-------------------------------------------------------------------------------------------
 
-print("\n💡 Topic 4A 💡\nReturn Multiple Values \n")
+print("\n💡 Topic 5A 💡\nReturn Multiple Values \n")
 
 // We can return multiple values from this function such as the min and the max
 func calculateStatistics(scores: [Int]) -> (min: Int, max: Int, average: Double) {
@@ -356,7 +417,7 @@ print("Maximum score: \(result.max)")
 print("Average score: \(result.average)")
 
 
-print("\n🧠 Challenge 4A: 🧠")
+print("\n🧠 Challenge 5A: 🧠")
 print("Write a function called analyzeNumbers that takes an array of integers as input and returns a tuple containing the count of even numbers and the count of odd numbers in the array. 👇\n")
 
 // Example:
@@ -365,48 +426,6 @@ print("Write a function called analyzeNumbers that takes an array of integers as
 // print("Even count: \(result.even), Odd count: \(result.odd)")
 
 // Expected Output: Even count: 2, Odd count: 4
-
-/*
- 👇 Your new code below 👇
-*/
-
-
-
-print("\n-------------------------------------------------------------------------------------------")
-
-print("\n💡 Topic 5 💡\nParameters \n")
-
-// Here, we define 2 parameters, a and b, and define their data type
-// For the purpose of an add function, a and b should each be an Int
-
-func add(a: Int, b: Int) -> Int {
-    return a + b
-}
-
-let sum: Int = add(a: 27, b: 1)
-print(sum) // Prints 27 + 1, or 28
-
-//-------------------------------------------------------------------------------------------
-
-print("\n💡 Topic 5A 💡\nDefault Values\n")
-
-func printTimesTables(for number: Int, end: Int = 12) {
-    for i in 1...end {
-        print("\(i) x \(number) is \(i * number)")
-    }
-}
-
-printTimesTables(for: 5, end: 20)
-printTimesTables(for: 8)
-
-
-print("\n🧠 Challenge 5A: 🧠")
-print("Write a function called greetUser that takes a name as input and prints a personalized greeting message. If no name is provided, the function should print a generic greeting message. 👇\n")
-
-// Example
-// greetUser(name: "Alice") -> Output: "Hello, Alice!"
-// greetUser() -> Output: "Hello, there!"
-
 
 /*
  👇 Your new code below 👇
