@@ -1,5 +1,5 @@
-import UIKit
-
+// import UIKit
+import Foundation
 /*
  
 Day 4 - Conditionals, Enums and Functions
@@ -399,13 +399,23 @@ print("\n-----------------------------------------------------------------------
 
 print("\n💡 Topic 5 💡\nReturn Statements \n")
 
+/* Functions in Swift can do more than just perform tasks; 
+   they can also return data or results to us. 
+
+   For example, the .sorted() method for Arrays is 
+   a function that returns our array back to us, but 
+   this time it's sorted. 
+*/
+
 // Here we’re calling the sorted method inside of the print function.
 let letters: Array<Character> = ["Z", "L", "A", "P", "K"]
 print("Here are some letters... \(letters)")
 print("Now here are some letters, but sorted... \(letters.sorted())\n")
 
+// As Swift programmers, we care about the type of data
+// How do we know what type a function will return?
 // The arrow (-> Int) defines the return type of the function
-// In other words, this function should only return an Int
+// In other words, this function below should only return an Int
 
 func addFourAndFive() -> Int {
     return 4 + 5
@@ -413,20 +423,91 @@ func addFourAndFive() -> Int {
 
 print(addFourAndFive()) // Prints out 9
 
+// We can assign the return type to a variable!
+// This is important! We will often want to store the returned value(s) of a function
+var nine = addFourAndFive()
+print(nine) //Prints out 9
 
-print("\n🧠 Challenge 5: 🧠")
+
+print("\n🧠 Challenge 5A: 🧠")
 print("Create a Subtraction Function for the Numbers 7 and 2 👇\n")
-
-
+// Then, use a print() statement to call your function and print the return value
 /*
  👇 Your new code below 👇
 */
 
+// ---------------------------------------------------------------------------------
+print("\n🧠 Challenge 5B: 🧠")
+print("Finish the function below so that it returns a string. The string may say anything you like. 👇\n")
 
+func aNiceLittleFunction() {
+    // Your code here
+}
+
+print(aNiceLittleFunction())
+
+// ---------------------------------------------------------------------------------
+print("\n🧠 Challenge 5C: 🧠")
+print("Uncomment the block of code below and run. What error do you get?")
+print("Change the return type to fix the error")
+
+/*
+func aVeryNaughtyFunction() -> Int {
+    let x = 1.05
+    let y = x * 5 / 8
+    let z = y * y / 1000
+    return z
+}
+
+print(aVeryNaughtyFunction())
+*/
+
+// ---------------------------------------------------------------------------------
+print("\n🧠 Challenge 5 Bonus (Optional): 🧠")
+// Rewrite aVeryNaughtyFunction() to use no variabes, but to return the same value
+// That is, do not use any "let" or "var" statements
+// Your new function will be called aSlightlyNaughtyFunction()
+// Be sure to add a return type
+
+func aSlightlyNaughtyFunction() {
+    // Your code here. Hint: You should only write one line of code
+}
+
+
+// This print statement below prints True or False depending on if the functions return equivalent values:
+// print(aVeryNaughtyFunction() == aSlightlyNaughtyFunction())
+
+// Uncomment the line above for Challenge 5B Bonus. Expected output: true
+
+print("The value you returned:", aSlightlyNaughtyFunction())
 
 //-------------------------------------------------------------------------------------------
 
-print("\n💡 Topic 5A 💡\nReturn Multiple Values \n")
+print("\n💡 Topic 5 Continued 💡\nReturn Multiple Values \n")
+
+// We can return more than one value from a function!
+func manyThingsToSay () -> (firstly: String, secondly: String, lastly: String ) {
+    return("Hey there!", "Wait", "Never mind!")
+}
+
+print(manyThingsToSay().firstly, manyThingsToSay().secondly)
+// Your turn: Print the last thing to say...
+
+// Let's use what we just learned about storing return values in a variable!
+var talkToMe = manyThingsToSay()
+print(talkToMe.firstly, talkToMe.secondly, talkToMe.lastly)
+
+func twoNumberToGiveToYou() -> (a: Int, b: Int){
+    return (5, 11)
+}
+
+// What happens if you try the return statement without the parens? What error do you get?
+// Notice we had to bundle the numbers together to return them both
+
+// What do we expect this to print?
+var myNums = twoNumberToGiveToYou()
+print(myNums.a)
+print(myNums.b)
 
 // We can return multiple values from this function such as the min and the max
 func calculateStatistics(scores: [Int]) -> (min: Int, max: Int, average: Double) {
@@ -456,11 +537,11 @@ print("Maximum score: \(result.max)")
 print("Average score: \(result.average)")
 
 
-print("\n🧠 Challenge 5A: 🧠")
+print("\n🧠 Challenge 5D: 🧠")
 print("Write a function called analyzeNumbers that takes an array of integers as input and returns a tuple containing the count of even numbers and the count of odd numbers in the array. 👇\n")
 
 // Example:
-// let numbers = [3, 8, 5, 12, 7, 6]
+// let numbers = [3, 8, 5, 12, 7, 1111]
 // let result = analyzeNumbers(numbers: numbers)
 // print("Even count: \(result.even), Odd count: \(result.odd)")
 
