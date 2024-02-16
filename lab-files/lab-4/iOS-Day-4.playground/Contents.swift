@@ -22,6 +22,8 @@ enum Fruit {
     case apple, banana, orange
 }
 
+// Follow along with the Instructor ⤵️
+
 var fruit = Fruit.apple
 
 // switch statement
@@ -216,9 +218,6 @@ print("💡 Topic 2A 💡\nTernary vs if-else: Code Length")
 
 let isMorning = false
 
-print("good \(isMorning ? "morning!" : "evening!")")
-// prints good evening!
-
 // if statement
 if isMorning {
     print("good morning!")
@@ -226,7 +225,12 @@ if isMorning {
     print("good evening!")
 }
 
-// this is much longer because we have to make two different parts with two different print statements which could be much simpler
+// this if statement is much longer because we have to make two different parts with two different print statements which could be much simpler
+
+// Follow along with the Instructor ⤵️
+print("good \(isMorning ? "morning!" : "evening!")")
+// prints good evening!
+
 
 print("\n🧠 Challenge 2A: 🧠")
 print("INSTRUCTION 👇\n")
@@ -283,6 +287,7 @@ print("From: Henry, Olivia, Alberto, Vidur")
 
 print("\n💡 Topic 3A 💡\nDefining Functions\n")
 
+// Follow along with the Instructor ⤵️
 func greet() {
     print("Hello Engineer")
     print("Welcome to iOS Club")
@@ -311,6 +316,7 @@ print("\n💡 Topic 4 💡\nParameters \n")
 // Here, we define 2 parameters, a and b, and define their data type
 // For the purpose of an add function, a and b should each be an Int
 
+// Follow along with the Instructor ⤵️
 func printSum(a: Int, b: Int) -> Int {
     return a + b
 }
@@ -322,6 +328,9 @@ printSum(a: 27, b: 1) // Prints 27 + 1, or 28
 print("\n💡 Topic 4A 💡\nDefault Values\n")
 
 // What if we wan to have a default value for a parameter.
+
+// Follow along with the Instructor ⤵️
+
 func startGame(mode: String = "Easy") { 
    print(mode);
    // The code to start the game based on the 'mode'
@@ -426,6 +435,7 @@ print("Now here are some letters, but sorted... \(letters.sorted())\n")
 // The arrow (-> Int) defines the return type of the function
 // In other words, this function below should only return an Int
 
+// Follow along with the Instructor ⤵️
 func addFourAndFive() -> Int {
     return 4 + 5
 }
@@ -434,6 +444,8 @@ print(addFourAndFive()) // Prints out 9
 
 // We can assign the return type to a variable!
 // This is important! We will often want to store the returned value(s) of a function
+
+// Follow along with the Instructor ⤵️
 var nine = addFourAndFive()
 print(nine) //Prints out 9
 
@@ -495,18 +507,21 @@ print("The value you returned:", aSlightlyNaughtyFunction())
 print("\n💡 Topic 5 Continued 💡\nReturn Multiple Values \n")
 
 // We can return more than one value from a function!
+
 func manyThingsToSay () -> (firstly: String, secondly: String, lastly: String ) {
     return("Hey there!", "Wait", "Never mind!")
 }
 
+// Follow along with the Instructor ⤵️
 print(manyThingsToSay().firstly, manyThingsToSay().secondly)
 // Your turn: Print the last thing to say...
 
 // Let's use what we just learned about storing return values in a variable!
+// Follow along with the Instructor ⤵️
 var talkToMe = manyThingsToSay()
 print(talkToMe.firstly, talkToMe.secondly, talkToMe.lastly)
 
-func twoNumberToGiveToYou() -> (a: Int, b: Int){
+func twoNumbersToGiveToYou() -> (a: Int, b: Int){
     return (5, 11)
 }
 
@@ -514,7 +529,7 @@ func twoNumberToGiveToYou() -> (a: Int, b: Int){
 // Notice we had to bundle the numbers together to return them both
 
 // What do we expect this to print?
-var myNums = twoNumberToGiveToYou()
+var myNums = twoNumbersToGiveToYou()
 print(myNums.a)
 print(myNums.b)
 
@@ -551,7 +566,7 @@ print("Write a function called analyzeNumbers that takes an array of integers as
 
 // Example:
 // let numbers = [3, 8, 5, 12, 7, 1111]
-// let result = analyzeNumbers(numbers: numbers)
+// let result = analyzeNumbers(myArray: numbers)
 // print("Even count: \(result.even), Odd count: \(result.odd)")
 
 // Expected Output: Even count: 2, Odd count: 4
@@ -593,6 +608,7 @@ func openInstagram(isLoggedIn: Bool) {
     }
 }
 
+// Follow along with the Instructor ⤵️
 func openSnapchat(isLoggedIn: Bool) {
     guard isLoggedIn else {
         print("show login page")
@@ -611,8 +627,8 @@ print("\n🧠 Challenge 6A: 🧠")
 print("Below is a function that handles some errors using if-else. Rewrite this function to use guard instead. 👇\n")
 
 
-func registerToVote(isCitizan: Bool, isAtLast18: Bool, isRegistered: Bool) {
-    if isCitizan {
+func registerToVote(isCitizen: Bool, isAtLast18: Bool, isRegistered: Bool) {
+    if isCitizen {
         if isAtLast18 {
             if isRegistered {
                 print("please select who you would like to vote for")
@@ -623,7 +639,7 @@ func registerToVote(isCitizan: Bool, isAtLast18: Bool, isRegistered: Bool) {
             print("this person is too young, cannot vote")
         }
     } else {
-        print("this person is not a citizan, cannot vote")
+        print("this person is not a citizen, cannot vote")
     }
 }
 
@@ -654,6 +670,7 @@ enum PasswordError: Error {
     case tooObvious
 }
 
+// Follow along with the Instructor ⤵️
 func checkPassword(password: String) throws -> String {
     guard password.count > 5 else {
         print("your password was too short")
@@ -675,7 +692,7 @@ try? checkPassword(password: "password")
 try? checkPassword(password: "Koi93nd0&3ndeil&dn+-8K")
 
 print("\n🧠 Challenge 6B: 🧠")
-print("Copy your code from Challenge 6A and past it below 👇. Update it to throw the different errors \n")
+print("Copy your code from Challenge 6A and paste it below 👇. Update it to throw the different errors \n")
 
 // Use this Error enum in your code
 enum RegisterToVoteError: Error {
@@ -687,7 +704,7 @@ enum RegisterToVoteError: Error {
 */
 
 
-print("💡 Topic 6C 💡\n handling errors with do-try-catch \n")
+print("💡 Topic 6C 💡\n Handling errors with do-try-catch \n")
 
 // Above we learned how to make a funciton throwable, and how to call a throwign function using "try?" However, we aren't really doing anything with the errors when they happen. When a funciton throws an error, we can handle that using a do-try-catch block
 
@@ -700,8 +717,9 @@ print("\nWe are using do-try-catch by trying to execute the checkPassword() func
      print("checkPassword did throw error")
  }
 
-print("\nhaving a simple catch like this is a catch-all, so ANY error will fall into the catch block. Maybe we want to be even more specifici with errors, we can add more unique catch blocks \n")
+print("\nhaving a simple catch like this is a catch-all, so ANY error will fall into the catch block. Maybe we want to be even more specific with errors, we can add more unique catch blocks \n")
 
+// Follow along with the Instructor ⤵️
 do {
     try checkPassword(password: "123456")
     print("checkPassword did not throw error")
@@ -715,7 +733,7 @@ do {
  
  
 print("\n🧠 Challenge 6C: 🧠")
-print("Copy your code from Challenge 6B and past it below 👇. How handle any errors using do-try-catch \n")
+print("Copy your code from Challenge 6B and paste it below 👇. Handle any errors using do-try-catch \n")
 
 /*
  👇 Your new code below 👇
