@@ -50,19 +50,18 @@ if fruit == Fruit.apple {
 //      print("variable matched valueToCompare")
 //    case anotheValue:
 //      print("variable matched anotherValue")
-//    case default:
-//      print("variable did not match any value")
 // }
 
 print("\n🧠 Challenge 1A: 🧠")
 print("INSTRUCTION 👇\n")
-// write a switch statement that prints out the weather with this given forcast enum
+// write a switch statement that prints the name of a coach for the club
+// Feel free to use any CodeNext staff member's name if you don't know the name of the coaches.
 
-enum Forcast{
-    case sun, rain, wind, cloud
+enum Clubs {
+    case podcasting, ios, uxDesign, creativeCoding, threeDModeling
 }
 
-let forcast = Forcast.wind
+let club = Clubs.podcasting
 
 /*
  👇 Your new code below 👇
@@ -75,6 +74,16 @@ let forcast = Forcast.wind
 print("\n💡 Topic 1B 💡\nDefault Cases")
 
 // default cases are like the final else statement in if-else statements
+//
+// Switch syntax:
+// switch variable {
+//    case valueToCompare:
+//      print("variable matched valueToCompare")
+//    case anotheValue:
+//      print("variable matched anotherValue")
+//    case default:
+//      print("variable did not match any value")
+// }
 
 var fruitString = "grape"
 
