@@ -386,6 +386,13 @@ func multiply(_ numOne: Int, by numTwo: Int) {
 
 multiply(4, by: 6) // 24
 
+print("\n🧠 Challenge 4B: 🧠")
+print("Create a divide() function that divides two numbers using internal and external parameters.  👇\n")
+
+/*
+ 👇 Your new code below 👇
+*/
+
 
 
 print("\n-------------------------------------------------------------------------------------------")
