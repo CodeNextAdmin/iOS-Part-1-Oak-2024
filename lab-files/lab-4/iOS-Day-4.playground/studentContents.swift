@@ -27,14 +27,7 @@ enum Fruit {
 var fruit = Fruit.apple
 
 // switch statement
-switch fruit{
-case .apple:
-    print("It's an apple!")
-case .banana:
-    print("It's a banana!")
-case .orange:
-    print("It's an orange!")
-}
+//switch fruit{}
 
 // if-else statement
 if fruit == Fruit.apple {
@@ -228,8 +221,8 @@ if isMorning {
 // this if statement is much longer because we have to make two different parts with two different print statements which could be much simpler
 
 // Follow along with the Instructor ⤵️
-print("good \(isMorning ? "morning!" : "evening!")")
-// prints good evening!
+
+
 
 
 print("\n🧠 Challenge 2A: 🧠")
@@ -288,16 +281,10 @@ print("From: Henry, Olivia, Alberto, Vidur")
 print("\n💡 Topic 3A 💡\nDefining Functions\n")
 
 // Follow along with the Instructor ⤵️
-func greet() {
-    print("Hello Engineer")
-    print("Welcome to iOS Club")
-    print("From: Henry, Olivia, Alberto, Vidur")
-}
+// func greet() {}
 
 // Calls the greet function
-greet() // Greets 1st engineer
-greet() // Greets 2nd engineer
-greet() // Greets 3rd engineer
+
 
 
 print("\n🧠 Challenge 3A: 🧠")
@@ -317,11 +304,9 @@ print("\n💡 Topic 4 💡\nParameters \n")
 // For the purpose of an add function, a and b should each be an Int
 
 // Follow along with the Instructor ⤵️
-func printSum(a: Int, b: Int) {
-    print(a + b)
-}
+//func printSum()
 
-printSum(a: 27, b: 1) // Prints 27 + 1, or 28
+// printSum(a: 27, b: 1) // Prints 27 + 1, or 28
 
 //-------------------------------------------------------------------------------------------
 
@@ -363,15 +348,10 @@ print("Can you write a Swift function that automatically prints out a times tabl
 // ...
 // 12 x 8 = 96
 
-// INSTRUCTOR ONLY
-func printTimesTables(for number: Int, end: Int = 12) {
-    for i in 1...end {
-        print("\(i) x \(number) = \(i * number)")
-    }
-}
 
 
-print("\n💡 Topic 4B 💡\nInternal External Perameters\n")
+
+print("\n💡 Topic 4B 💡\nInternal External Parameters\n")
 
 // Here is a smple function that takes two numbers and multiplies them together. We can do this by passing the two numbers we want to add using parameters
 
@@ -434,18 +414,14 @@ print("Now here are some letters, but sorted... \(letters.sorted())\n")
 // In other words, this function below should only return an Int
 
 // Follow along with the Instructor ⤵️
-func addFourAndFive() -> Int {
-    return 4 + 5
-}
+// func addFourAndFive()
 
-print(addFourAndFive()) // Prints out 9
+// print(addFourAndFive()) // Prints out 9
 
 // We can assign the return type to a variable!
 // This is important! We will often want to store the returned value(s) of a function
 
 // Follow along with the Instructor ⤵️
-var nine = addFourAndFive()
-print(nine) //Prints out 9
 
 
 print("\n🧠 Challenge 5A: 🧠")
@@ -511,25 +487,22 @@ func manyThingsToSay () -> (firstly: String, secondly: String, lastly: String ) 
 }
 
 // Follow along with the Instructor ⤵️
-print(manyThingsToSay().firstly, manyThingsToSay().secondly)
-// Your turn: Print the last thing to say...
+
 
 // Let's use what we just learned about storing return values in a variable!
 // Follow along with the Instructor ⤵️
 var talkToMe = manyThingsToSay()
-print(talkToMe.firstly, talkToMe.secondly, talkToMe.lastly)
 
-func twoNumbersToGiveToYou() -> (a: Int, b: Int){
-    return (5, 11)
-}
+
+// func twoNumbersToGiveToYou()
 
 // What happens if you try the return statement without the parens? What error do you get?
 // Notice we had to bundle the numbers together to return them both
 
 // What do we expect this to print?
-var myNums = twoNumbersToGiveToYou()
-print(myNums.a)
-print(myNums.b)
+// var myNums = twoNumbersToGiveToYou()
+// print(myNums.a)
+// print(myNums.b)
 
 // We can return multiple values from this function such as the min and the max
 func calculateStatistics(scores: [Int]) -> (min: Int, max: Int, average: Double) {
@@ -607,13 +580,7 @@ func openInstagram(isLoggedIn: Bool) {
 }
 
 // Follow along with the Instructor ⤵️
-func openSnapchat(isLoggedIn: Bool) {
-    guard isLoggedIn else {
-        print("show login page")
-        return
-    }
-    print("show home feed")
-}
+func openSnapchat(isLoggedIn: Bool) {}
 
 openInstagram(isLoggedIn: true)
 openInstagram(isLoggedIn: false)
@@ -670,18 +637,13 @@ enum PasswordError: Error {
 
 // Follow along with the Instructor ⤵️
 func checkPassword(password: String) throws -> String {
-    guard password.count > 5 else {
-        print("your password was too short")
-        throw PasswordError.tooShort
-    }
-    guard password != "123456", password != "password" else {
-        print("Your password was too obvious")
-        throw PasswordError.tooObvious
-    }
+
+    // Follow Instructor here
     
     print("good password")
     return "good password"
 }
+
 
 // When you want to use a function that throws, you have to use "try?" before the function
 try? checkPassword(password: "123")
