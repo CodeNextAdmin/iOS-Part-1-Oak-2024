@@ -44,13 +44,13 @@ print("💡 Topic 2 💡\nWorking with Properties\n")
 // Creating a property is simple in Swift Structs, just define whether it is mutatable or not, and define the type
 
 struct Battery {
-    var maxBatteryMinutes: Int = 300 // adding an equals adds a default value, but if you want to change it, it has to be mutable
-    var currentBatteryPercentage: Int
+    let maxBatteryMinutes: Int = 300 // adding an equals adds a default value, but if you want to change it, it has to be mutable
+    var currentBatteryPercentage: Int = 0
 }
 
-var iPhoneBattery = Battery(maxBatteryMinutes: 50, currentBatteryPercentage: 100)
+var iPhoneBattery = Battery(currentBatteryPercentage: 100)
 // static properties can only be accessed
-print(iPhoneBattery.maxBatteryMinutes) // prints 50
+print(iPhoneBattery.maxBatteryMinutes) // prints 300
 // trying to change it will throw an error
 // iPhoneBattery.maxBatteryMinutes = 100 <-- will throw error: Cannot assign to property: 'maxBatteryMinutes' is a 'let' constant
 // but you can both access and change currentBatteryPercentage:
@@ -78,10 +78,15 @@ struct Inventory {
 
 var minecraftInventory = Inventory(inventorySize: 36)
 
-minecraftInventory.readItems() // prints []
+minecraftInventory.readItems() // prints [:]
 minecraftInventory.addItem(item: "Diamond Sword", amount: 1)
 minecraftInventory.addItem(item: "Steak", amount: 64)
 minecraftInventory.readItems() // prints ["Diamond Sword" : 1, "Steak": 64]
+
+print("\n🧠 Challenge 2: 🧠")
+
+print("Add a content rating property to the VideoGame struct and provide a function for setting the value. Content rating should be an enum type with three possible values: Rating Pending, Mature and Everyone. Create an instance of a video game, give it a rating and then display the game.👇\n")
+
 
 //-------------------------------------------------------------------------------------------
 
