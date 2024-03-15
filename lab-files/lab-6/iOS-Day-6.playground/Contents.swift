@@ -171,22 +171,16 @@ SmileyFarms.numAppleTrees = 50 // runs willSet, changes the value and runs didSe
 
 print("\n🧠 Challenge 2B: 🧠")
 
-print("Change the Game struct to print a message when a player is joining the game (willSet), and a message when they have joined (didSet) 👇\n")
-
-//struct Game {
-//    let runningGames: Int
-//    var numPlayers: Int
-//
-//}
+print("Change the Battery Struct to have a isCharging property. Print a message when a charger is plugged in that says how many minutes till full charge(willSet) and message when it is charging(didSet)👇\n")
 
 /*
  👇 Your new code below 👇
 */
 
 
-// code should work when Game struct is created
-//var streetFighterOnline = Game(runningGames: 500, numPlayers: 600)
-//streetFighterOnline.numPlayers += 10
+// code should work when your changes are complete
+// var laptopBattery = Battery(currentBatteryPercentage: 5)
+// laptopBattery.isCharging = true
 
 print("💡 Topic 3 💡\nWorking with Initializers\n")
 
