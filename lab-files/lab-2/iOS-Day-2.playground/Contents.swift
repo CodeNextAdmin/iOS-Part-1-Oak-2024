@@ -1,5 +1,3 @@
-import UIKit
-
 /*
 Day 2 Code Along
  
